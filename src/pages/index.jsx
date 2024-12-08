@@ -6,6 +6,9 @@ import GroceryManager from "./GroceryManager/GroceryManager";
 import HeaderNavigation from "./HeaderNavigation/HeaderNavigation";
 import RandomTextGen from "./RandomTextGen/RandomTextGen";
 import ReviewsSlider from "./ReviewsSlider/ReviewsSlider";
+import ShoppingCart from "./ShoppingCart/ShoppingCart";
+import SidebarWithModal from "./SidebarWithModal/SidebarWithModal";
+import StripeThemeDesign from "./StripeThemeDesign/StripeThemeDesign";
 
 export {
   Home,
@@ -16,4 +19,7 @@ export {
   HeaderNavigation,
   RandomTextGen,
   ReviewsSlider,
+  ShoppingCart,
+  SidebarWithModal,
+  StripeThemeDesign,
 };

@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 import { motion } from "framer-motion";
 import { FaBirthdayCake, FaTrashAlt, FaRedo } from "react-icons/fa";
-import List from "./List";
+import BirthdaysList from "./BirthdaysList";
 
 const birthdaysData = [
   {
@@ -77,7 +77,7 @@ const BirthdayTracker = () => {
         </header>
 
         <section className="mb-6">
-          <List allData={allData} />
+          <BirthdaysList allData={allData} />
         </section>
 
         <div className="flex justify-center space-x-4">
@@ -101,7 +101,7 @@ const BirthdayTracker = () => {
               className="flex items-center bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
             >
               <FaRedo className="w-5 h-5 mr-2" />
-              Restore List
+              Restore BirthdaysList
             </motion.button>
           )}
         </div>

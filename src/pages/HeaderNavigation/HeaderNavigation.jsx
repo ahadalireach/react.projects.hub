@@ -1,30 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import {
-  FaBehance,
-  FaFacebook,
-  FaLinkedin,
-  FaTwitter,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { social, links } from "./data";
 import logo from "./logo.svg";
-
-const links = [
-  { id: 1, url: "/", text: "home" },
-  { id: 2, url: "/about", text: "about" },
-  { id: 3, url: "/projects", text: "projects" },
-  { id: 4, url: "/contact", text: "contact" },
-  { id: 5, url: "/profile", text: "profile" },
-];
-
-const social = [
-  { id: 1, url: "https://www.facebook.com", icon: <FaFacebook /> },
-  { id: 2, url: "https://www.twitter.com", icon: <FaTwitter /> },
-  { id: 3, url: "https://www.linkedin.com", icon: <FaLinkedin /> },
-  { id: 4, url: "https://www.behance.net", icon: <FaBehance /> },
-];
 
 const HeaderNavigation = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -52,10 +31,9 @@ const HeaderNavigation = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white shadow-md min-h-96 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  shadow-lg">
         <div className="flex justify-between items-center py-4">
-          {/* Logo and Mobile Toggle */}
           <div className="flex justify-between items-center w-full lg:w-auto">
             <Link to="/" className="flex items-center">
               <img
@@ -73,7 +51,6 @@ const HeaderNavigation = () => {
             </button>
           </div>
 
-          {/* Mobile & Desktop Navigation */}
           <AnimatePresence>
             {(showLinks || window.innerWidth >= 1024) && (
               <motion.div
@@ -81,20 +58,11 @@ const HeaderNavigation = () => {
                 animate="visible"
                 exit="hidden"
                 variants={navVariants}
-                className={`
-                  absolute top-16 left-0 w-full lg:static lg:block
-                  bg-white lg:bg-transparent z-20
-                  ${showLinks ? "block" : "hidden"}
-                `}
+                className={`${
+                  showLinks ? "block" : "hidden"
+                } absolute top-16 left-0 w-full lg:static lg:block bg-white lg:bg-transparent z-20`}
               >
-                <motion.ul
-                  className="
-                    flex flex-col lg:flex-row
-                    space-y-2 lg:space-y-0 lg:space-x-6
-                    items-center justify-center
-                    p-4 lg:p-0
-                  "
-                >
+                <motion.ul className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-6 items-center justify-center p-4 lg:p-0">
                   {links.map((link) => (
                     <motion.li
                       key={link.id}
@@ -103,11 +71,7 @@ const HeaderNavigation = () => {
                     >
                       <Link
                         to={link.url}
-                        className="
-                          text-gray-700 hover:text-primary
-                          capitalize transition-colors
-                          font-medium text-lg
-                        "
+                        className="text-gray-700 hover:text-primary capitalize transition-colors font-medium text-lg"
                         onClick={() => setShowLinks(false)}
                       >
                         {link.text}
@@ -119,7 +83,6 @@ const HeaderNavigation = () => {
             )}
           </AnimatePresence>
 
-          {/* Social Icons */}
           <div className="hidden lg:flex items-center space-x-4">
             {social.map((socialIcon) => (
               <a
@@ -127,10 +90,7 @@ const HeaderNavigation = () => {
                 href={socialIcon.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-                  text-gray-500 hover:text-primary
-                  text-xl transition-colors
-                "
+                className="text-gray-500 hover:text-primary text-xl transition-colors"
               >
                 {socialIcon.icon}
               </a>

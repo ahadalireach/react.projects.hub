@@ -1,16 +1,21 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 
-const Categories = ({filterItems, categories}) => {
-
+const Categories = ({ filterItems, categories }) => {
   return (
-    <div className='btn-container'>
+    <div className="btn-container">
       {categories.map((eachCategory, index) => {
-        return <button key={index} className='filter-btn' onClick={() => filterItems(eachCategory)}>{eachCategory}</button>
+        return (
+          <button
+            key={index}
+            className="filter-btn"
+            onClick={() => filterItems(eachCategory)}
+          >
+            {eachCategory}
+          </button>
+        );
       })}
-      {/* <button className='filter-btn' onClick={() => filterItems('breakfast')}>Breakfast</button> */}
     </div>
   );
-
 };
 
 export default Categories;

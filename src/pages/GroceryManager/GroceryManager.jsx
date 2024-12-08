@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaPlus } from "react-icons/fa";
-import List from "./List";
+import GroceryList from "./GroceryList";
 import Alert from "./Alert";
 
 const getLocalStorage = () => {
@@ -105,7 +105,11 @@ function GroceryManager() {
 
         {list.length > 0 && (
           <div className="mt-4">
-            <List items={list} removeItem={removeItem} editItem={editItem} />
+            <GroceryList
+              items={list}
+              removeItem={removeItem}
+              editItem={editItem}
+            />
             <button
               onClick={clearItems}
               className="w-full mt-4 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition-colors"

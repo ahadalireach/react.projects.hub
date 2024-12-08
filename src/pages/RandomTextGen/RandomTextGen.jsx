@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaWandMagicSparkles, FaExclamation } from "react-icons/fa6";
-import { data } from "./data";
+import { paragraphs } from "./data";
 
 const RandomTextGen = () => {
   const [count, setCount] = useState(1);
@@ -18,7 +18,7 @@ const RandomTextGen = () => {
       setAlert(true);
       setText([]);
     } else {
-      setText(data.slice(0, amount));
+      setText(paragraphs.slice(0, amount));
     }
   };
 

@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBirthdayCake } from "react-icons/fa";
 
-const List = ({ allData }) => {
+const BirthdaysList = ({ allData }) => {
   return (
     <>
       <AnimatePresence>
@@ -38,4 +38,4 @@ const List = ({ allData }) => {
   );
 };
 
-export default List;
+export default BirthdaysList;

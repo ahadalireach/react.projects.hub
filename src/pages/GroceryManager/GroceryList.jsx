@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-const List = ({ items, removeItem, editItem }) => {
+const GroceryList = ({ items, removeItem, editItem }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -44,4 +44,4 @@ const List = ({ items, removeItem, editItem }) => {
   );
 };
 
-export default List;
+export default GroceryList;
